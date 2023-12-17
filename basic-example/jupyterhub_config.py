@@ -15,6 +15,10 @@ c.JupyterHub.spawner_class = "dockerspawner.DockerSpawner"
 
 # Spawn containers from this image
 c.DockerSpawner.image = os.environ["DOCKER_NOTEBOOK_IMAGE"]
+c.DockerSpawner.allowed_images = os.environ["DOCKER_NOTEBOOK_ALLOWED_IMAGES"].split()
+
+# Use nvidia runtime
+c.DockerSpawner.extra_host_config = {'runtime': 'nvidia' }
 
 # Connect containers to this Docker network
 network_name = os.environ["DOCKER_NETWORK_NAME"]
@@ -48,6 +52,9 @@ c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 
 # Authenticate users with Native Authenticator
 c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"
+
+# Allow multiple servers per user
+c.JupyterHub.allow_named_servers = True
 
 # Allow anyone to sign-up without approval
 c.NativeAuthenticator.open_signup = True
