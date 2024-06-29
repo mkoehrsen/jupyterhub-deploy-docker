@@ -33,7 +33,10 @@ services:
       DOCKER_NETWORK_NAME: jupyterhub-network
       # JupyterHub will spawn this Notebook image for users
       DOCKER_NOTEBOOK_IMAGE: quay.io/jupyter/base-notebook:latest
-      DOCKER_NOTEBOOK_ALLOWED_IMAGES: quay.io/jupyter/base-notebook:latest cschranz/gpu-jupyter:v1.5_cuda-12.0_ubuntu-22.04
+      DOCKER_NOTEBOOK_ALLOWED_IMAGES: |
+        quay.io/jupyter/base-notebook:latest
+        cschranz/gpu-jupyter:v1.5_cuda-12.0_ubuntu-22.04
+        ghcr.io/mkoehrsen/music-ocr
       # Notebook directory inside user image
       DOCKER_NOTEBOOK_DIR: /home/jovyan/work
 
