@@ -52,6 +52,7 @@ c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 
 # Authenticate users with Native Authenticator
 c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"
+c.Authenticator.allow_all = True
 
 # Allow multiple servers per user
 c.JupyterHub.allow_named_servers = True
