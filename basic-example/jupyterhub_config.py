@@ -50,6 +50,9 @@ c.JupyterHub.hub_port = 8080
 c.JupyterHub.cookie_secret_file = "/data/jupyterhub_cookie_secret"
 c.JupyterHub.db_url = "sqlite:////data/jupyterhub.sqlite"
 
+# Allow all signed-up users to login
+c.Authenticator.allow_all = True
+
 # Authenticate users with Native Authenticator
 c.JupyterHub.authenticator_class = "nativeauthenticator.NativeAuthenticator"
 c.Authenticator.allow_all = True
