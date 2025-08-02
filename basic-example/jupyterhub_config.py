@@ -34,7 +34,11 @@ c.DockerSpawner.notebook_dir = notebook_dir
 
 # Mount the real user's Docker volume on the host to the notebook user's
 # notebook directory in the container
-c.DockerSpawner.volumes = {"jupyterhub-user-{username}": notebook_dir}
+c.DockerSpawner.volumes = {
+        "jupyterhub-user-{username}": notebook_dir,
+        "/home/{username}/.ssh": {"bind": "/home/jovyan/.ssh", "mode": "ro"}
+}
+
 
 # Remove containers once they are stopped
 c.DockerSpawner.remove = True

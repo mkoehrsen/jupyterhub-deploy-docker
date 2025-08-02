@@ -37,6 +37,7 @@ services:
         quay.io/jupyter/base-notebook:latest
         cschranz/gpu-jupyter:v1.5_cuda-12.0_ubuntu-22.04
         ghcr.io/mkoehrsen/music-ocr
+        ghcr.io/mkoehrsen/cadtools:latest
       # Notebook directory inside user image
       DOCKER_NOTEBOOK_DIR: /home/jovyan/work
 
